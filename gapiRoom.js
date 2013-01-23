@@ -4,8 +4,7 @@ var clearTimeout = require("timers").clearTimeout
 var now = require("date-now")
 
 var invoker = require("./lib/invoker")
-
-var gapi = typeof window !== "undefined" ? window.gapi : {}
+var gapi = require("./lib/gapi")
 
 module.exports = Room
 
@@ -22,7 +21,7 @@ function Room(host) {
     var people = reducible(function (next, state) {
         var invoke = invoker(next, state, cleanup)
 
-        hangout.onParticipantsRemoved.add(onAdd)
+        hangout.onParticipantsAdded.add(onAdd)
 
         hangout.onParticipantsRemoved.add(onRemove)
 

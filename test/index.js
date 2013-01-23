@@ -10,3 +10,4 @@ Function.prototype.bind = Function.prototype.bind || function bind(self) {
 require("./rooms")
 require("./people")
 require("./scenario")
+require("./gapiRoom")

@@ -19,21 +19,20 @@
   "dependencies": {
     "reducible": "~1.0.5",
     "reducers": "~3.0.0-alpha",
-    "crdt": "~3.4.1",
     "node-uuid": "~1.4.0",
     "xtend": "~1.0.3",
-    "enchain": "~0.0.1",
-    "event": "~1.0.0",
-    "tape": "~0.2.2",
-    "mock": "~0.1.0",
-    "testem": "~0.2.55",
-    "date-now": "~0.1.0",
-    "time-mock": "~0.1.0"
+    "date-now": "~0.1.0"
   },
   "devDependencies": {
     "tape": "~0.2.2",
     "browserify": "https://github.com/raynos/node-browserify/tarball/master",
-    "testem": "~0.2.55"
+    "testem": "~0.2.55",
+    "time-mock": "~0.1.1",
+    "crdt": "~3.4.1",
+    "mock": "~0.1.0",
+    "tape": "~0.2.2",
+    "enchain": "~0.0.1",
+    "event": "~1.0.0"
   },
   "licenses": [
     {
