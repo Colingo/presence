@@ -7,11 +7,15 @@ module.exports = presence
 function presence(room, doc) {
     var roomId = "presence~room~" + (room.id || uuid())
 
-    doc.add(extend(room, {
+    var roomItem = extend({}, room, {
         id: roomId
         , type: "presence~room"
         , ts: Date.now()
-    }))
+    })
+
+    ;delete roomItem.people
+
+    doc.add(roomItem)
 
     fold(room.people, function (person) {
         doc.add(extend(person, {
