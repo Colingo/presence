@@ -1,6 +1,7 @@
 var reducible = require("reducible/reducible")
 var setTimeout = require("timers").setTimeout
 var clearTimeout = require("timers").clearTimeout
+var now = require("date-now")
 
 var invoker = require("./lib/invoker")
 
@@ -47,7 +48,7 @@ function Room(host) {
                 , imageUri: par.person.image.url
                 , name: par.person.displayName
                 , online: true
-                , ts: Date.now()
+                , ts: now()
             })
         }
 
@@ -61,7 +62,7 @@ function Room(host) {
         function touch(par) {
             invoke({
                 id: par.person.id
-                , ts: Date.now()
+                , ts: now()
                 , online: true
             })
         }
