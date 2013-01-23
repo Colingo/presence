@@ -84,7 +84,7 @@ havn't updated their ts recently (i.e. heartbeating)
 
 ## MIT Licenced
 
-  [1]: https://secure.travis-ci.org/Raynos/presence.png
-  [2]: http://travis-ci.org/Raynos/presence
-  [3]: http://ci.testling.com/Raynos/presence.png
-  [4]: http://ci.testling.com/Raynos/presence
+  [1]: https://secure.travis-ci.org/Colingo/presence.png
+  [2]: http://travis-ci.org/Colingo/presence
+  [3]: http://ci.testling.com/Colingo/presence.png
+  [4]: http://ci.testling.com/Colingo/presence
