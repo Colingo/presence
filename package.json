@@ -1,6 +1,6 @@
 {
   "name": "presence",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Presence information for rooms of people persisted in crdt",
   "keywords": [],
   "author": "Raynos <raynos2@gmail.com>",
