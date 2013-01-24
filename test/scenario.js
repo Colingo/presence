@@ -37,10 +37,9 @@ test("scenario #1", function (assert) {
 
     var server = Document()
 
-    presence(roomA, docA)
-    presence(roomB, docB)
-
     pipe(server, docA)
+
+    presence(roomA, docA)
 
     var list = []
 
@@ -54,6 +53,8 @@ test("scenario #1", function (assert) {
     assert.equal(list.length, 1)
 
     pipe(server, docB)
+
+    presence(roomB, docB)
 
     assert.equal(list.length, 2)
     assert.equal(list[1].name, "B")

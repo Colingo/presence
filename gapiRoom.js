@@ -28,7 +28,7 @@ function Room(host) {
         hangout.getParticipants().forEach(add)
 
         var timer = setTimeout(function loop() {
-            hangout.getParticipants().forEach(touch)
+            hangout.getParticipants().forEach(add)
 
             timer = setTimeout(loop, 1000)
         }, 1000)
@@ -55,14 +55,6 @@ function Room(host) {
             invoke({
                 id: par.person.id
                 , online: false
-            })
-        }
-
-        function touch(par) {
-            invoke({
-                id: par.person.id
-                , ts: now()
-                , online: true
             })
         }
 
