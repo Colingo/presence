@@ -14,7 +14,7 @@ function cleanse(doc) {
         var ts = now()
         set.forEach(function (row) {
             var state = row.state
-            if (state.ts <= ts - 5 * SECOND) {
+            if (state.ts <= ts - 5 * SECOND && row.get("online")) {
                 row.set("online", false)
             }
         })
