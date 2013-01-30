@@ -4,7 +4,6 @@ var clearTimeout = require("timers").clearTimeout
 var now = require("date-now")
 
 var invoker = require("./lib/invoker")
-var gapi = require("./lib/gapi")
 
 module.exports = Room
 
@@ -14,7 +13,7 @@ module.exports = Room
     events.
 
 */
-function Room(host) {
+function Room(host, gapi) {
     var hangout = gapi.hangout
     var id = hangout.getHangoutId()
 
