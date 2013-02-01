@@ -1,29 +1,19 @@
 var test = require("tape")
 var into = require("reducers/into")
 var print = require("reducers/debug/print")
-// var reducers = require("reducers")
-// var enchain = require("enchain")
 var mock = require("mock")
 var Timer = require("time-mock")
 
 var Hangout = require("./util/hangout")
-var gapiRoom = require("../gapiRoom")
-
-// var chain = enchain(reducers, {
-//     fold: reducers.fold
-//     , into: reducers.into
-// })
+var GapiRoom = require("../gapiRoom")
 
 test("gapiRoom", function (assert) {
     var timer = Timer(0)
     var id = "james"
-    var Room = mock("../gapiRoom", {
-        "../lib/gapi": {
-            hangout: Hangout(id)
-        }
-    }, require)
 
-    var room = Room({ foo: "bar" })
+    var room = GapiRoom({ foo: "bar" }, {
+        hangout: Hangout(id)
+    })
 
     assert.deepEqual(room.host, { foo: "bar" })
     assert.equal(room.id, "james")
@@ -36,17 +26,16 @@ test("gapiRoom.people", function (assert) {
     var id = "james"
     var hangout = Hangout(id)
     var Room = mock("../gapiRoom", {
-        "../lib/gapi": {
-            hangout: hangout
-        }
-        , "timers": {
+        "timers": {
             setTimeout: timer.setTimeout
             , clearTimeout: timer.clearTimeout
         }
         , "date-now": timer.now
     }, require)
 
-    var room = Room()
+    var room = Room({}, {
+        hangout: hangout
+    })
     var list = []
 
     into(room.people, list)

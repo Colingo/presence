@@ -7,6 +7,7 @@ var mock = require("mock")
 var Timer = require("time-mock")
 var event = require("event")
 var send = require("event/send")
+var extend = require("xtend")
 
 var person = require("./util/person")
 var pipe = require("./lib/pipe")
@@ -14,7 +15,9 @@ var presence = require("../index")
 var rooms = require("../rooms")
 var cleanse = require("../cleanse")
 
-var chain = enchain(reducers, {
+var chain = enchain(extend(reducers, {
+    expand: require("reducers/expand")
+}), {
     fold: reducers.fold
     , into: reducers.into
 })
