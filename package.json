@@ -17,12 +17,14 @@
     "email": "raynos2@gmail.com"
   },
   "dependencies": {
-    "reducible": "~1.0.5",
     "reducers": "Raynos/reducers",
     "node-uuid": "~1.4.0",
     "xtend": "~1.0.3",
     "date-now": "~0.1.0",
     "crdt": "~3.4.2"
+  },
+  "peerDependencies": {
+    "reducible": "~1.0.5"
   },
   "devDependencies": {
     "tape": "~0.2.2",
