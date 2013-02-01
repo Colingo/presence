@@ -34,6 +34,7 @@
     "crdt": "~3.4.1",
     "mock": "~0.1.0",
     "enchain": "~0.0.1",
+    "reducible": "~1.0.5",
     "event": "~1.0.0"
   },
   "licenses": [
